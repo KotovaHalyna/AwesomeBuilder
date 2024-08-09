@@ -1,0 +1,500 @@
+/*
+Theme Name: CustomTheme
+Theme URI: https://wordpress.org/themes/CustomTheme/
+Author: the Rost team
+Author URI: http://rost.com.ua/
+Description: CustomTheme brings your site to life with immersive featured images and subtle animations. Our default theme works great in many languages, for any abilities, and on any device.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: CustomTheme
+Tags: custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("./assets/fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #fff;
+  --color: #000;
+  --example-bg: aliceblue;
+  --primary: #df60ff;
+  --secondary: #07f7ff;
+  --succsess: #76ff03;
+  --warning: #ff5722;
+  --error: #ff1744;
+}
+
+.dark-theme {
+  --primary: #efadff;
+  --secondary: #befdff;
+  --succsess: #ddffc2;
+  --warning: #ffdbd0;
+  --error: #ffadbd;
+  --bg-color: #272727;
+  --color: #ffffff;
+  --example-bg: rgb(75, 78, 81);
+}
+
+body {
+  font-size: 16px;
+  background: #2f3624;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  max-width: 1350px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: 2px solid #000;
+  background-color: #ececec;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-succsess {
+  background-color: var(--succsess);
+  border-color: var(--succsess);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+}
+
+.btn-error {
+  background-color: var(--error);
+  border-color: var(--error);
+}
+
+.btn-rounded {
+  border-radius: 25px;
+}
+
+.btn-outline {
+  background-color: transparent;
+}
+
+.btn-outline.btn-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline.btn-secondary:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-outline.btn-succsess:hover {
+  background-color: var(--succsess);
+  border-color: var(--succsess);
+}
+
+.btn-outline.btn-warning:hover {
+  background-color: var(--warning);
+  border-color: var(--warning);
+}
+
+.btn-outline.btn-error:hover {
+  background-color: var(--error);
+  border-color: var(--error);
+}
+
+.btn:active,
+.btn.btn-rounded:active,
+.btn.btn-outline:active {
+  background-color: var(--error);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-succsess {
+  background-color: var(--succsess);
+}
+
+.bg-warning {
+  background-color: var(--warning);
+}
+
+.bg-error {
+  background-color: var(--error);
+}
+
+.btn-close {
+  padding: 12px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.btn-close:hover {
+  transform: rotate(0.5turn);
+}
+.btn-close:active {
+  background-color: transparent;
+}
+.btn-close::before, .btn-close::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 2px;
+  background-color: #272727;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 4px;
+  top: 11px;
+}
+.btn-close::after {
+  transform: rotate(-45deg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  font-weight: 600;
+  margin-bottom: 0.7em;
+}
+
+h1,
+.title-1,
+.page-title {
+  font-size: 2.25rem;
+}
+
+h2,
+.title-2,
+.example-title,
+.page-subtitle {
+  font-size: 2rem;
+}
+
+h3,
+.title-3,
+caption {
+  font-size: 1.75rem;
+}
+
+h4,
+.title-4 {
+  font-size: 1.62rem;
+}
+
+h5,
+.title-5 {
+  font-size: 1.37rem;
+}
+
+h6,
+.title-6 {
+  font-size: 1.12rem;
+}
+
+header {
+  padding: 15px 0;
+  background: #222;
+}
+header .container {
+  display: flex;
+}
+header .header-nav {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 100px;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+header a:hover {
+  color: rgb(254, 199, 136);
+}
+header .logo {
+  display: block;
+  max-width: 170px;
+}
+
+.build {
+  height: calc(100vh - 240px);
+}
+
+.build-item {
+  fill: rgb(127, 204, 255);
+  stroke: rgb(73, 124, 225);
+  fill-opacity: 0;
+  stroke-opacity: 0;
+  stroke-width: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.build-item.sold {
+  fill: rgb(232, 79, 79);
+  stroke: rgb(232, 156, 153);
+  stroke-opacity: 1;
+  fill-opacity: 0.7;
+  cursor: no-drop;
+}
+.build-item.sold:hover {
+  fill-opacity: 1;
+}
+.build-item:hover {
+  stroke-opacity: 1;
+  fill-opacity: 0.7;
+}
+
+.genplan {
+  display: flex;
+  flex-direction: column;
+}
+
+.information {
+  color: #fff;
+  background: #121212;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.information h2 {
+  font-size: 24px;
+}
+.information-list {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  text-align: center;
+}
+
+.list-item {
+  display: flex;
+  min-width: 235px;
+  flex-direction: column;
+}
+.list-item b {
+  font-size: 18px;
+}
+
+.image-build {
+  height: calc(100vh - 250px);
+  padding-left: 240px;
+}
+
+.floor-item {
+  fill: rgba(33, 150, 243, 0.7215686275);
+  stroke: #2196f3;
+  fill-opacity: 0;
+  stroke-opacity: 0;
+  stroke-width: 5px;
+  transition: 0.2s;
+}
+.floor-item.sold {
+  fill: rgba(243, 33, 54, 0.7215686275);
+  stroke: #c65a6c;
+  stroke-opacity: 1;
+  fill-opacity: 0.7;
+  cursor: no-drop;
+}
+.floor-item.sold:hover {
+  fill-opacity: 1;
+}
+.floor-item.booking {
+  fill: rgba(239, 242, 17, 0.7215686275);
+  stroke: #ebe36d;
+}
+.floor-item.booking:hover {
+  cursor: no-drop;
+}
+.floor-item:hover {
+  stroke-opacity: 1;
+  fill-opacity: 0.7;
+}
+
+.information-list-options {
+  background: #ecdd17;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.information-list-options h2 {
+  font-size: 24px;
+}
+
+.floors-triger {
+  list-style: none;
+  display: flex;
+  gap: 55px;
+  text-align: center;
+}
+
+.floors-list {
+  display: flex;
+  flex-direction: column;
+}
+.floors-list b {
+  font-size: 22px;
+}
+
+.flat.active.flat-stroke {
+  stroke: rgba(4, 255, 0, 0.937254902);
+  fill: rgba(4, 255, 0, 0.3176470588);
+}
+.flat.action .number-overlay {
+  fill: #80D34E;
+}
+.flat.booking .number-overlay {
+  fill: #6B68FF;
+}
+.flat.sold .number-overlay {
+  fill: #D34E4E;
+}
+
+.flat-stroke {
+  stroke: rgba(4, 255, 0, 0);
+  stroke-width: 3px;
+  fill: rgba(4, 255, 0, 0);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.flat-stroke:hover {
+  stroke: #05ff00;
+  fill: rgba(4, 255, 0, 0.3176470588);
+}
+
+.status-overlay {
+  fill: white;
+  stroke: rgba(0, 0, 0, 0);
+  stroke-width: 2px;
+}
+
+.number-overlay {
+  fill: #00DEFC;
+  stroke: rgba(0, 0, 0, 0);
+  stroke-width: 2px;
+}
+
+.cell-flat-number,
+.cell-flat-status {
+  fill: black;
+  font-weight: bold;
+}
+
+.floor-options {
+  display: flex;
+  gap: 60px;
+  text-align: center;
+  font-size: 22px;
+}
+
+footer {
+  height: 100px;
+  background: #222;
+  margin-top: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: 0.1s;
+}
+.modal.show {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal.show .modal-body {
+  transform: translate(0);
+}
+
+.modal-body {
+  background-color: aliceblue;
+  max-width: 550px;
+  width: 100%;
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: 0.3s;
+  transform: translate(100vw);
+}
+
+.btn-row {
+  margin-top: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form input {
+  height: 48px;
+}
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+/*# sourceMappingURL=style.css.map */
